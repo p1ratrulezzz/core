@@ -281,8 +281,7 @@ class Telegram
         $which = [];
         if ($scope !== null) {
             $which = is_array($scope) ? $scope : [$scope];
-        }
-        else {
+        } else {
             $which[] = 'CustomSystem';
             $which[] = 'System';
             $this->isAdmin() && $which[] = 'Admin';
@@ -456,7 +455,8 @@ class Telegram
         return $this->ucfirstUnicode(str_replace('_', '', $type));
     }
 
-    protected function getCommandFromUpdate(Update $update) {
+    protected function getCommandFromUpdate(Update $update)
+    {
         $this->update = $update;
         $this->last_update_id = $update->getUpdateId();
 
@@ -495,7 +495,8 @@ class Telegram
         return $command;
     }
 
-    public function preProcessUpdate(Update $update) {
+    public function preProcessUpdate(Update $update)
+    {
         $command = $this->getCommandFromUpdate($update);
 
         $this->addCommandsPath('Commands/PreprocessCommands');
@@ -554,7 +555,7 @@ class Telegram
      * @return mixed
      * @throws \Longman\TelegramBot\Exception\TelegramException
      */
-    public function executeCommand($command, $scope = NULL)
+    public function executeCommand($command, $scope = null)
     {
         $command     = strtolower($command);
         $command_obj = $this->getCommandObject($command, $scope);
