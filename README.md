@@ -586,13 +586,15 @@ See [CONTRIBUTING](.github/CONTRIBUTING.md) for more information.
 All work on this bot consists of many hours of coding during our free time, to provide you with a Telegram Bot library that is easy to use and extend.
 If you enjoy using this library and would like to say thank you, donations are a great way to show your support.
 
-Donations are invested back into the project :+1:
+Donations are invested back into the project (These details are for original project: https://github.com/php-telegram-bot) :+1:
 
 - Gratipay: [Gratipay/PHP-Telegram-Bot]
 - Liberapay: [Liberapay/PHP-Telegram-Bot]
 - PayPal: [PayPal/noplanman] (account of @noplanman)
 - Bitcoin: [166NcyE7nDxkRPWidWtG1rqrNJoD5oYNiV][bitcoin]
 - Ethereum: [0x485855634fa212b0745375e593fAaf8321A81055][ethereum]
+
+Note: Please, save these details if you are forking the repo
 
 ## License
 
