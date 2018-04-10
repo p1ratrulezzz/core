@@ -237,6 +237,12 @@ class Message extends Entity
     public function getText($without_cmd = false)
     {
         $text = $this->getProperty('text');
+        // @link: http://php.net/manual/en/function.str-replace.php#102465
+        $search_replace = [
+            "\xE2\x80\x94" => '--', // U+2014 emdash,
+        ];
+
+        $text = str_replace(array_keys($search_replace), array_values($search_replace), $text);
 
         if ($without_cmd && $command = $this->getFullCommand()) {
             if (strlen($command) + 1 < strlen($text)) {
