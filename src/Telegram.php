@@ -17,6 +17,7 @@ use Exception;
 use Longman\TelegramBot\Commands\Command;
 use Longman\TelegramBot\Entities\ServerResponse;
 use Longman\TelegramBot\Entities\Update;
+use Longman\TelegramBot\Event\Controller;
 use Longman\TelegramBot\Exception\TelegramException;
 use PDO;
 use RecursiveDirectoryIterator;
@@ -156,6 +157,11 @@ class Telegram
     protected $last_update_id = null;
 
     protected $bootstrap_level = 0;
+
+    /**
+     * @var \Longman\TelegramBot\Event\Controller
+     */
+    protected $event_controller = null;
 
     /**
      * Telegram constructor.
@@ -1062,5 +1068,25 @@ class Telegram
     public function getLastUpdateId()
     {
         return $this->last_update_id;
+    }
+
+    /**
+     * Sets an event controller to trigger some events
+     *
+     * @param \Longman\TelegramBot\Event\Controller $event_controller
+     */
+    public function setEventController(Controller $event_controller)
+    {
+        $this->event_controller = $event_controller;
+    }
+
+    /**
+     * Gets event controller if it is set
+     *
+     * @return null|\Longman\TelegramBot\Event\Controller
+     */
+    public function getEventController()
+    {
+        return $this->event_controller;
     }
 }
